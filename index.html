@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fatima's 18th Birthday</title>
+
+<style>
+
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:linear-gradient(180deg,#e9d5ff,#dbeafe);
+color:#333;
+text-align:center;
+overflow-x:hidden;
+position:relative;
+}
+
+/* PETAL BACKGROUND */
+
+#petal-container{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:0;
+pointer-events:none;
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+position:relative;
+z-index:2;
+}
+
+.hero h1{
+font-size:60px;
+letter-spacing:5px;
+color:white;
+text-shadow:0 5px 20px rgba(0,0,0,0.35);
+text-transform:uppercase;
+}
+
+.button{
+padding:15px 30px;
+background:linear-gradient(45deg,#a78bfa,#c4b5fd);
+color:white;
+border:none;
+margin-top:25px;
+border-radius:20px;
+cursor:pointer;
+font-weight:bold;
+box-shadow:0 10px 25px rgba(0,0,0,0.3);
+transition:.3s;
+}
+
+.button:hover{
+transform:scale(1.07);
+}
+
+/* GLASS CARDS */
+
+.card{
+max-width:520px;
+margin:40px auto;
+padding:35px;
+border-radius:25px;
+
+background:rgba(255,255,255,0.35);
+backdrop-filter:blur(12px);
+-webkit-backdrop-filter:blur(12px);
+
+border:1px solid rgba(255,255,255,0.5);
+
+box-shadow:0 20px 40px rgba(0,0,0,.15);
+
+opacity:0;
+transform:translateY(30px);
+transition:1s;
+
+position:relative;
+z-index:2;
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.card h2{
+color:#7c3aed;
+margin-bottom:15px;
+}
+
+/* COLOR BUBBLES */
+
+.colors{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+.color{
+padding:10px 18px;
+border-radius:20px;
+font-size:14px;
+font-weight:bold;
+color:#333;
+box-shadow:0 5px 12px rgba(0,0,0,.2);
+}
+
+.sage{background:#cce3d0;}
+.lavender{background:#e9d5ff;}
+.blue{background:#bfdbfe;}
+.champagne{background:#f7e7ce;}
+
+ul{
+text-align:left;
+display:inline-block;
+margin-top:10px;
+}
+
+/* GLOWING COUNTDOWN */
+
+.countdown{
+font-size:26px;
+margin-top:15px;
+font-weight:bold;
+color:white;
+
+padding:10px 18px;
+border-radius:12px;
+
+background:linear-gradient(45deg,#a78bfa,#c4b5fd);
+
+box-shadow:
+0 0 10px #c4b5fd,
+0 0 20px #c4b5fd,
+0 0 30px #a78bfa;
+
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+box-shadow:0 0 10px #c4b5fd,0 0 20px #c4b5fd;
+}
+to{
+box-shadow:0 0 20px #c4b5fd,0 0 40px #a78bfa;
+}
+}
+
+/* MAP */
+
+iframe{
+width:100%;
+height:200px;
+border:0;
+border-radius:12px;
+margin-top:15px;
+}
+
+/* SAKURA */
+
+.petal{
+position:absolute;
+top:-10px;
+font-size:18px;
+animation:fall linear infinite;
+opacity:.8;
+}
+
+@keyframes fall{
+0%{transform:translateY(0) rotate(0deg);}
+100%{transform:translateY(110vh) rotate(360deg);}
+}
+
+/* MOBILE */
+
+@media(max-width:480px){
+
+.hero h1{
+font-size:38px;
+}
+
+.card{
+margin:20px;
+padding:25px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="petal-container"></div>
+
+<div class="hero">
+
+<h1>YOU ARE INVITED</h1>
+
+<button class="button" onclick="scrollToCard()">
+OPEN INVITATION
+</button>
+
+</div>
+
+<div class="card" id="card">
+
+<h2>FATIMA'S 18TH BIRTHDAY</h2>
+
+<p><b>WHEN :</b> April 20, 2026</p>
+<p><b>TIME :</b> 5:00 PM</p>
+
+<p><b>WHERE :</b> Artan Garden</p>
+<p>92 J. P. Rizal, Santa Lucia, Novaliches</p>
+<p>Quezon City, Metro Manila</p>
+
+<div class="countdown" id="countdown"></div>
+
+</div>
+
+<div class="card">
+
+<h2>ATTIRE</h2>
+
+<p>Semi-formal attire</p>
+
+<div class="colors">
+
+<div class="color sage">Sage Green</div>
+<div class="color lavender">Lavender / Lilac</div>
+<div class="color blue">Baby Blue</div>
+<div class="color champagne">Champagne / Cream</div>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<h2>WISHLIST</h2>
+
+<ul>
+<li>Gold / Silver accessories</li>
+<li>Watch</li>
+<li>Shoes / Crocs</li>
+<li>Bagsmart slingbag</li>
+<li>Jacket / Hoodie (XL)</li>
+<li>Perfume</li>
+</ul>
+
+<p><i>* Any gifts are appreciated! This is just a guide.</i></p>
+
+</div>
+
+<div class="card">
+
+<h2>LOCATION</h2>
+
+<iframe src="https://www.google.com/maps?q=92+J+P+Rizal+Santa+Lucia+Novaliches+Quezon+City&output=embed"></iframe>
+
+</div>
+
+<div class="card">
+
+<h2>MESSAGE</h2>
+
+<p>Join us as we celebrate this special milestone.</p>
+
+</div>
+
+<script>
+
+/* SCROLL */
+
+function scrollToCard(){
+
+const card=document.getElementById("card")
+
+const top=card.getBoundingClientRect().top+window.pageYOffset
+
+const offset=window.innerHeight/2-card.offsetHeight/2
+
+window.scrollTo({top:top-offset,behavior:'smooth'})
+
+}
+
+/* FADE IN */
+
+const cards=document.querySelectorAll(".card")
+
+function reveal(){
+
+cards.forEach(c=>{
+
+if(c.getBoundingClientRect().top<window.innerHeight-100){
+
+c.classList.add("show")
+
+}
+
+})
+
+}
+
+window.addEventListener("scroll",reveal)
+
+reveal()
+
+/* COUNTDOWN */
+
+var eventDate=new Date("Apr 20, 2026 17:00:00").getTime()
+
+setInterval(function(){
+
+var now=new Date().getTime()
+
+var d=eventDate-now
+
+var days=Math.floor(d/(1000*60*60*24))
+var hours=Math.floor((d%(1000*60*60*24))/(1000*60*60))
+var minutes=Math.floor((d%(1000*60*60))/(1000*60))
+var seconds=Math.floor((d%(1000*60))/1000)
+
+document.getElementById("countdown").innerHTML=
+days+"d "+hours+"h "+minutes+"m "+seconds+"s"
+
+},1000)
+
+/* SAKURA BACKGROUND */
+
+function createPetal(){
+
+const petal=document.createElement("div")
+
+petal.className="petal"
+
+petal.innerHTML="🌸"
+
+petal.style.left=Math.random()*100+"vw"
+
+petal.style.animationDuration=(6+Math.random()*6)+"s"
+
+document.getElementById("petal-container").appendChild(petal)
+
+setTimeout(()=>{petal.remove()},12000)
+
+}
+
+setInterval(createPetal,600)
+
+</script>
+
+</body>
+</html>
