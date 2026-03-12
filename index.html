@@ -9,14 +9,16 @@
 body{
   margin:0;
   font-family:'Poppins',sans-serif;
-  background:linear-gradient(180deg,#e9d5ff,#dbeafe);
-  color:#333;
-  text-align:center;
-  overflow-x:hidden;
-  position:relative;
-  scroll-behavior:smooth;
-}
 
+  background:
+  linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+  url("background.jpg.jpg");
+
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+}
+  
 /* PETAL BACKGROUND */
 #petal-container{
   position:fixed;
@@ -293,4 +295,5 @@ updateFocus();
 </script>
 
 </body>
+
 </html>
